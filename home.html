@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/favicon.svg" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <title>Procurar Pet</title>
+</head>
+<body>
+  <img src="img/cachorros.jpg" id="header-imagem" alt="Imagem de cachorros">
+  <header class="header">
+    <div class="header-content">
+      <a href="home.html">
+        <img src="img/logo.png" alt="Logo" class="logo">
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+      </a>
+      <h1 span>CadêMeu<span class="colored-letter">Pet?</span></h1>
+      <nav>
+        <ul class="menu">
+          <li><a href="#">Sobre</a></li>
+          <li><a href="https://cademeupetetecmcm.blogspot.com/" target="_blank">Blog</a></li>
+          <li><a href="chat.html">Chat</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>        
+      </nav>
+      <a href="" class="invisible-buttom"></a>
+      <div class="profile-area2" onclick="toggleProfileOptions()">
+        <img src="img/avatar1.jpg" class="profile-picture" title="Conta">
+        <div id="profile-options" class="profile-options invisible">
+          <img src="img/avatar1.jpg" class="profile-picture3" title="Conta">
+          <button onclick="redirectToConfig()">Configurações</button>
+          <button onclick="confirmLogout()">Sair da conta</button>                
+        </div>
+      </div>     
+    </div>
+  </header>
+  <a href="formulario.html">
+    <button class="find-button">
+      <span id="typed-title">Cadê Meu Pet?</span>
+    </button>
+  </a>
+  <div class="button-container">
+    <button class="how-to-use-button">Como Usar?</button>
+  </div>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  <!-- Três textos ao lado um do outro -->
+  <div class="textos-container">
+    <div class="texto">
+      <h3>Quem somos</h3>
+      <p>Cadastre-se, nos conheça, e tenha acesso a nossas ferramentas.</p>
+    </div>
+    <div class="texto">
+      <h3>AMP</h3>
+      <p>Utilize nossa poderosa arma de localização. Seu pet espera por você.</p>
+    </div>
+    <div class="texto">
+      <h3>Encontrar pet</h3>
+      <p>Você achou seu fofucho. Compartilhe sua experiência!</p>
+    </div>
+  </div>
+   <!-- ... (código anterior) ... -->
+   <section class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 item mdc-layout-grid__inner">
+    <div class="secao-personalizada">
+      <h2>Unindo corações, reencontrando patinhas</h2>
+      <p>Tecnologia e amor em um só, em busca do seu xodó,</p>
+    </div>
+    <div class="sobre-nos-container"> <!-- Adicione a classe do contêiner -->
+      <h1 style="color: #069e80;">Sobre nós</h1>
+      <p>
+        Nosso projeto propõe oferecer aos moradores de Ribeirão Pires uma ferramenta versátil e gratuita, que facilitará o compartilhamento de informações entre moradores à respeito de seus animais perdidos.
+      </p>
+      <p>Como assim? Muito simples! Nosso site terá uma IA (Inteligência Artificial) que filtrará as informações colocadas tanto pelos donos dos PETs sumidos, como pelos moradores que encontram estes PETs!</p>
+     <img src="img/gatinhor.jpg" class="gatinhor-size">
+      <p>
+        Através de um mostruário público, os moradores poderão prestar características (físicas ou comportamentais) do animal, que se por acaso tiver sido encontrado, serão as mesmas que as da pessoa que o achou colocou no site. Caso as informações do bichinho achado casem de fato com as que o dono colocou, a opção de um chat privado aparecerá, onde serão disponibilizadas informações pessoais como endereço, telefone, etc. de quem achou o animal, sendo assim possível buscá-lo e levá-lo para seu lar de volta.
+      </p>
+      <img src="img/fundodogs.jpg" class="gatinhor-size">
+      <p>É importante enfatizar que o site não fornece nenhum tipo de recompensa em dinheiro para ambos lados, mas se por acaso houver, deverá ser feita fora do site com a conscientização dos envolvidos, tomando toda e qualquer responsabilidade para si.</p>
+      <img src="img/homeless-pet.jpg" class="homeless-pet">
+    </div>
+  </section>
+  <section class="guia">
+    <div class="container" id="guiaSection1"></div>
+    <div class="guia-content">
+      <div class="guia-amp-container">
+        <h2>Guia: <span class="hover-text">AMP</span></h2>
+        <div class="hover-content">
+          <p>AMP <span style="color: #0f766e; font-weight: bold;">(Achei Meu Pet)</span>: A principal ferramenta para encontrar animais perdidos.</p>
+          <p>Uma IA de reconhecimento que utiliza inteligência artificial para escanear e diferenciar animais, facilitando a busca pelo seu pet.</p>
+        </div>
+      </div>
+      <h3>Use sua câmera para identificar seu pet:</h3>
+      <p>Escaneie o seu pet e deixe o nosso site encontrar animais semelhantes usando a poderosa tecnologia de inteligência artificial (IA).</p>
+      <p>Você pode fornecer informações detalhadas, como raça, tamanho e características individuais do seu animal de estimação, como <span style="color: #0f766e; font-weight: bold;">orelhas</span> grandes (levantadas/caídas), <span style="color: #0f766e; font-weight: bold;">cor</span> de <span style="color: #0f766e; font-weight: bold;">pelo</span>, <span style="color: #0f766e; font-weight: bold;">olhos</span> e <span style="color: #0f766e; font-weight: bold;">manchas</span>.</p>
+      <h3>O que é necessário?</h3>
+      <p>Use nossa tecnologia de IA para encontrar animais semelhantes. Capture ou selecione uma foto de alta qualidade, bem iluminada e com seu pet claramente visível para melhores resultados.</p>
+    </div>
+    <div class="guia-icon-container">
+      <img src="img/guia-icon.svg" class="guia-icon">
+    </div>
+  </div>
+</section>
+<section class="guia">
+  <div class="container"></div>
+  <div class="guia-content">
+    <div class="guia-amp-container">
+      <h2>Guia: Formulário</span></h2>
+      <div class="hover-content"></div>
+    </div>
+    <h3>Responda o formulário para identificar seu pet:</h3>
+    <p>Compartilhe o comportamento do seu pet para identificação precisa.</p>
+    <p>Para uma identificação precisa, informe no formulário dados como <span style="color: #0f766e; font-weight: bold;">porte</span>, <span style="color: #0f766e; font-weight: bold;">sexo</span>, <span style="color: #0f766e; font-weight: bold;">local</span>, onde foi perdido e descrição detalhada do seu pet.</p>
+    <h3>O que é necessário?</h3>
+    <p>Responda o questionário de forma detalhada, abordando <span style="color: #0f766e; font-weight: bold;">hábitos</span>, <span style="color: #0f766e; font-weight: bold;">temperamento</span> e demais características do seu pet. Quanto mais completo e preciso for o relato, maior a precisão na identificação do seu animal.</p>
+  </div>
+  <div class="guia-icon-container">
+    <img src="img/guia-icon2.svg" class="guia-icon">
+  </div>
+</div>
+</section>
+<footer class="footer" id="footer">
+  &copy; 2023 CadêMeuPet. Todos os direitos reservados.
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
