@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>CadeMeuPet</title>
+  <link rel="icon" href="img/favicon.svg" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+</head>
+<body>
+  <img src="img/parrot.png" alt="parrot" class="parrot" id="imagem-parrot">
+  <div class="bloco-cinza"></div>
+  <div id="profile-section">
+    <div>
+      <img id="profile-img" class="change-img-btn" onclick="triggerUpload()" src="img/avatar1.jpg" alt="Perfil">
+      <label class="change-img-btn" onclick="triggerUpload()"><i class="icon-perfil" title="Trocar Imagem"></i></label>
+    </div>
+    <div class="profile-content">
+      <div class="profile-info">   
+        <div class="labels-container">
+          <label>Nome: <span id="profile-name" onclick="editName('profile-name')">Gabriel</span>
+              <i class="icon-perfil" title="Editar Nome" onclick="editName('profile-name')"></i>
+          </label>
+  
+          <label>Sobrenome: <span id="full-name" onclick="editName('full-name')">Lemos</span>
+              <i class="icon-perfil" title="Editar Nome" onclick="editName('full-name')"></i>
+          </label>
+  
+          <label>Email: <span id="email" onclick="editName('email')">cademeupettcc2023@gmail.com</span>
+              <i title="e-mail"></i>
+          </label>
+  
+          <label>Cidade: <span id="city" onclick="editName('city')">Ribeirão Pires</span>
+              <i class="icon-perfil" onclick="editName('city')"></i>
+          </label>
+  
+          <label>Estado: <span id="state" onclick="editName('state')">São Paulo</span>
+              <i class="icon-perfil" onclick="editName('state')"></i>
+          </label>
+        </div>
+      <div class="button-container">
+        <input type="file" id="upload" accept="image/*" style="display:none;" onchange="displayImage()">
+        <a class="button-styled" href="home.html">Voltar</a>
+      </div>
+    </div>
+  </div>
+  <a href="" class="save-fake">Salvar</a>
+  <footer class="footer" id="footer">
+    &copy; 2023 CadêMeuPet. Todos os direitos reservados.
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

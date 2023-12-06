@@ -1,0 +1,1979 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; /* Exibe a imagem de fundo de forma que cubra todo o corpo */
+  background-clip: padding-box;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.contacts {
+  width: 330.16px;
+  background: linear-gradient(to bottom, #e1e2e2, #0bc6d317);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  margin-bottom: 0px;
+  border: 1px solid #e2fdfa;
+  border-radius: 0px;
+  position: relative; /* Adiciona posição relativa */
+}
+
+.contact-content {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact.selected {
+  transform: translateX(10px);
+}
+
+.contact-offset {
+  margin-top: 200px;
+}
+
+.contact-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.contact-name {
+  font-weight: bold;
+  margin: 0;
+}
+
+.contact-status {
+  margin: 0;
+  color: gray;
+}
+
+.contacts::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contacts::-webkit-scrollbar-track {
+  background: #D9D9D9;
+}
+
+.contacts::-webkit-scrollbar-thumb {
+  background: #14B8A6;
+}
+
+.contacts::-webkit-scrollbar-thumb:hover {
+  background: #0D9488;
+}
+
+.chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  background-color: #99F6E4;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 94px;
+  border-radius: 5px;
+  border: 1px solid #069e80;
+}
+
+.chat-header-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat-header-name {
+  margin-right: 5px; 
+}
+
+.chat-header-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.chat-header-status {
+  margin-top: 25px; 
+  width: 50px;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .contacts {
+    margin-top: 0;
+  }
+
+  .chat-header {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .header {
+    background-color: #14B8A6;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .logo {
+    margin-bottom: 10px;
+  }
+  
+  .menu {
+    margin-top: 15px;
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0;
+  }
+  
+  .menu li {
+    display: inline; /* Para que os itens do menu fiquem na mesma linha */
+    margin: 0 10px; /* Espaçamento entre os itens do menu */
+  }
+  
+  .menu a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: #fff; /* Cor dos links */
+  }
+  
+  .profile-area {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  .container {
+    height: auto;
+    padding-bottom: 50px;
+  }
+  
+  .contacts {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .chat-header {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .chat-messages {
+    margin-bottom: 70px;
+  }
+  
+  .chat-input {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: #14B8A6;
+    background: linear-gradient(to top, #D9D9D9, #0bc6d317);
+  }
+  
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+}
+  .sent-message {
+    background-color: #DCF8C6;
+    align-self: flex-end;
+    word-wrap: break-word; /* Quebra de linha */
+  }
+  
+.received-message {
+  background-color: #F2F2F2;
+  align-self: flex-start;
+}
+
+.chat-input {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  background-color: #14B8A6;
+  background: linear-gradient(to top, #D9D9D9, #0bc6d317);
+}
+
+.chat-input input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 3px solid #14B8A6;
+  border-bottom-left-radius: 20px;
+  border: 1px solid #e2fdfa; /* Adiciona uma linha de 1px sólida de cor preta */
+  border-radius: 5px; /* Adiciona bordas arredondadas de 10px */
+}
+
+.chat-input button {
+  padding: 10px 25px;
+  margin-bottom: 30x;
+  border: none;
+  font-weight: bold;
+  background-color: #2DD4BF;
+  color: #fff;
+  border-bottom-right-radius: 80px;
+  cursor: pointer;
+}
+
+.message.sent-message {
+  background-color: #CCFBF1;
+  color: #042F2E;
+  font-weight: bold;
+}
+
+.chat-input button.botao {
+  padding: 15px 15px;
+  border: none;
+  font-weight: bold;
+  background-color: #2DD4BF;
+  color: #fffbfb;
+  border-bottom-right-radius: 90px;
+  cursor: pointer;
+  border: 1px solid #e2fdfa; /* Adiciona uma linha de 1px sólida de cor preta */
+  border-radius: 5px; /* Adiciona bordas arredondadas de 10px */
+}
+
+.chat-input button.botao:hover {
+  background-color: #1FAA98;
+}
+
+
+.footer {
+  display: none;
+  background-color: #000e0e;
+  text-align: center;
+  padding: 25px;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+.header {
+  background-color: #231F20;
+  color: #fff;
+  padding: 9px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+.header-content {
+  display: flex;
+  align-items: center;
+  
+}
+
+h1 {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.profile-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 0px;
+  font-style: bold;
+  transition: box-shadow 0.3s ease-in-out; /* Adiciona uma transição suave */
+}
+
+.profile-picture:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.profile-text {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-right: 5px;
+  color: #99F6E4;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  margin-right: 10px;
+  filter: brightness(150%);
+  transition: transform 0.3s ease-in-out;
+  }
+  
+  .logo:hover {
+    transform: scale(1.2);
+  }
+  
+
+.colored-letter {
+  color: #99F6E4; 
+}
+
+.header h1 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.header nav ul {
+  list-style: none;
+  margin: 15px;
+  padding: 10px;
+}
+
+.header nav ul li {
+  display: inline-block;
+  margin-right: 50px;
+}
+
+.header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header nav ul li a:hover {
+  color: #99F6E4;
+}
+.botao {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #14B8A6;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.botao:hover {
+  background-color: #0D9488;
+}
+/* Estilos para a área de pesquisa */
+.search-area {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para o campo de pesquisa */
+.search-area input {
+  flex-grow: 1; /* Ocupa o espaço disponível */
+  padding: 10px; /* Aumenta o preenchimento */
+  border: 1px solid #ccc; /* Adiciona uma borda */
+  border-radius: 5px;
+  font-size: 14px; /* Ajusta o tamanho da fonte */
+  width: 300px; /* Ajuste a largura conforme necessário */
+  margin-top: 12px;
+}
+
+.search-btn{
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: #14B8A6;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.search-btn:hover {
+  background-color: #0D9488;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  margin-right: 00px; /* Ajustado para 400px, 100px a mais */
+  filter: brightness(150%);
+  transition: transform 0.3s ease-in-out;
+}
+
+  .logo:hover {
+    transform: scale(1.2);
+  }
+  
+
+.colored-letter {
+  color: #99F6E4; 
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  
+}
+
+h1 {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+.profile-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 170px;
+  font-style: bold;
+  transition: box-shadow 0.3s ease-in-out; /* Adiciona uma transição suave */
+}
+
+.profile-picture:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.profile-text {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-right: 5px;
+  color: #99F6E4;
+}
+
+.logo {
+  width: 90px;
+  height: 90px;
+  margin-right: 10px;
+  filter: brightness(150%);
+  transition: transform 0.3s ease-in-out;
+  }
+  
+  .logo:hover {
+    transform: scale(1.2);
+  }
+  
+
+.colored-letter {
+  color: #99F6E4; 
+}
+
+.header h1 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.header nav ul {
+  list-style: none;
+  margin: 15px;
+  padding: 10px;
+}
+
+.header nav ul li {
+  display: inline-block;
+  margin-right: 50px;
+}
+
+.header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header nav ul li a:hover {
+  color: #99F6E4;
+}
+.botao {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #14B8A6;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.botao:hover {
+  background-color: #0D9488;
+}
+
+
+/*efeito deslize*/
+.slide-button {
+  position: relative;
+  padding: 10px 20px;
+  background-color: #14B8A6;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 20px; /* Adicione esta propriedade para arredondar as bordas */
+}
+
+.slide-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #0D9488;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 20px; /* Adicione esta propriedade para arredondar as bordas */
+}
+
+.slide-button:hover::before {
+  transform: translateX(100%);
+}
+
+.botao-link {
+  position: relative;
+  display: inline-block;
+  padding: 10px 100px;
+  background-color: #231F20;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 40px;
+}
+
+.botao-link::before {
+  content: "";
+  position: absolute;
+  padding: 10px 100px;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 10px;
+  opacity: 0;
+  background: linear-gradient(45deg, #fff, #14B8A6);
+  z-index: -1;
+  transition: opacity 0.3s, transform 10.0s;
+  animation: pulsate 2s infinite;
+  border-radius: 40px;
+
+}
+
+.botao-link:hover{
+  background-color:#292929;
+  color:#ffffff;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+}
+
+
+.botao-link:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.invisible-buttom {
+  position: relative;
+  display: inline-block;
+  padding: 10px 200px;
+  background-color: #231F20;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 40px;
+}
+
+/*efeito perfil*/
+
+.profile-picture,
+.profile-text {
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-area:hover .profile-picture {
+  transform: scale(1.2);
+}
+
+.profile-area:hover .profile-text {
+  transform: scale(1.1);
+}
+
+/* ... outros estilos ... */
+
+.profile-area {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px; /* Adicionado margem para simetria */
+}
+
+.profile-button {
+  background-color: transparent;
+  border: none;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 50px;
+}
+
+.profile-button:hover {
+  background-color: #14B8A6;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-picture:hover {
+  transform: scale(1.2);
+}
+
+.profile-text {
+  font-size: 20px;
+  margin-top: 5px;
+  margin-right: 15px;
+  color: #99F6E4;
+}
+
+
+.contact-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: #14B8A6;
+  color: #fff;
+  border: none;
+  margin-left: -8px;
+  border-radius: 60px;
+  border-top-right-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  text-decoration: none;
+  margin-top: 10px; /* Adicionado para descer 30px */
+}
+
+.contact-profile:hover {
+  background-color: #0D9488;
+  transform: scale(1.1);
+}
+
+.contacts .contact-profile {
+  width: calc(100% + 30px);
+  height: 30px;
+  margin-left: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-header {
+  position: fixed;
+  background-color: #14B8A6;
+  color: #fff;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 18px;
+  width: 100%;
+  z-index: 9999;
+   box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.5);
+}
+
+.chat-header-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat-header-name {
+  margin-right: 5px; 
+}
+
+.chat-header-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+.chat-header-status {
+  margin-top: 25px; 
+  width: 50px;
+}
+
+.chat-input button {
+  padding: 10px 25px;
+  border: 1px solid rgb(195, 241, 232); /* Adicione a propriedade border-width e ajuste conforme necessário */
+  font-weight: bold;
+  margin-top: 10px;
+  background-color: #14B8A6;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Código anterior do CSS */
+
+.contacts .contact:first-child .contact-profile {
+  background-color: #134E4A;
+}
+
+/*Inicio*/
+
+.imagem-fixada {
+  position: fixed;
+  top: 70px; /* Espaço superior para evitar que a imagem fique sob o cabeçalho */
+  left: 0;
+  width: 100%;
+  height: auto; /* Mantém a proporção original da imagem */
+  z-index: -1; /* Coloca a imagem atrás do conteúdo */
+  clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
+}
+
+.conteudo-inicio{
+  background-color: #231F20;
+}
+
+.login-area {
+  background-color: #fff; /* Cor de fundo da área de login */
+  padding: 30px; /* Espaçamento interno */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  width: 30%; /* Largura da área de login */
+  margin-right: 60px; /* Espaço entre a imagem e a área de login */
+}
+
+/* Estilos gerais */
+
+/* Estilos para posicionar o texto à direita */
+.conteudo-inicio {
+  position: relative;
+}
+
+.titulo-direita {
+  position: absolute;
+  top: 140px;
+  right: 0;
+  left: 65%;
+  transform: translateY(-50%);
+  font-size: 50px; /* Tamanho da fonte do texto */
+  font-family: 'Playfair Display', serif;
+  color: #231F20;
+  
+}
+
+/* Estilos adicionais para outros elementos na página */
+
+/* Defina a posição relativa para .conteudo-inicio */
+.conteudo-inicio {
+  position: relative;
+}
+
+/* Estilos para o texto "CadêMeuPet" */
+.titulo-direita {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  left: 65%;
+  transform: translateY(-50%);
+  font-size: 50px; /* Tamanho da fonte do texto */
+  font-family: Calibri, sans-serif;
+  color: #231F20;
+}
+
+/* Estilos para a área de login-cadastro */
+.login-conecte-se {
+  position: absolute;
+  top: 150px; /* Ajuste a posição vertical conforme necessário */
+  right: 11%; /* Ajuste a posição horizontal conforme necessário */
+  background-color: #fff; /* Cor de fundo da área de login-cadastro */
+  padding: 3%; /* Espaçamento interno em relação à largura do elemento pai */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  width: 20%; /* Largura responsiva */
+  max-width: 400px; /* Largura máxima para evitar que o elemento fique muito largo */
+  font-family: Calibri, sans-serif; /* Fonte */
+  color: #231F20; /* Cor do texto */
+  text-align: center; /* Centraliza o conteúdo */
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.login-cadastro {
+  position: absolute;
+  top: 150px; /* Ajuste a posição vertical conforme necessário */
+  right: 11%; /* Ajuste a posição horizontal conforme necessário */
+  background-color: #fff; /* Cor de fundo da área de login-cadastro */
+  padding: 3%; /* Espaçamento interno em relação à largura do elemento pai */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  width: 20%; /* Largura responsiva */
+  max-width: 400px; /* Largura máxima para evitar que o elemento fique muito largo */
+  font-family: Calibri, sans-serif; /* Fonte */
+  color: #231F20; /* Cor do texto */
+  text-align: center; /* Centraliza o conteúdo */
+  margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+/* Estilos para o botão "Enviar" */
+.login-btn {
+  background-color: #36B49A; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  padding: 12px 40px; /* Espaçamento interno do botão */
+  border: none; /* Remove a borda do botão */
+  border-radius: 20px; /* Bordas arredondadas do botão */
+  cursor: pointer; /* Altera o cursor ao passar o mouse */
+  margin: 20px 0; /* Espaçamento superior e inferior */
+}
+
+.login-entrar-btn {
+  background-color: #36B49A; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  padding: 12px 5px; /* Espaçamento interno do botão */
+  border: none; /* Remove a borda do botão */
+  border-radius: 20px; /* Bordas arredondadas do botão */
+  cursor: pointer; /* Altera o cursor ao passar o mouse */
+  margin: 10px 0; /* Espaçamento superior e inferior */
+  display: block; /* Torna o botão um bloco para ocupar toda a largura disponível */
+  width: 100%; /* Define a largura total do botão */
+  text-decoration: none; /* Remove sublinhado (underline) */
+}
+
+.login-criar-conta-btn {
+  background-color: #36B49A; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  padding: 12px 5px; /* Espaçamento interno do botão */
+  border: none; /* Remove a borda do botão */
+  border-radius: 20px; /* Bordas arredondadas do botão */
+  cursor: pointer; /* Altera o cursor ao passar o mouse */
+  margin: 10px 0; /* Espaçamento superior e inferior */
+  display: block; /* Torna o botão um bloco para ocupar toda a largura disponível */
+  width: 100%; /* Define a largura total do botão */
+  text-decoration: none; /* Remove sublinhado (underline) */
+}
+
+
+/* Estilos para campos de entrada de texto */
+.login-input {
+  width: 100%; /* Largura total do campo de entrada */
+  padding: 10px; /* Espaçamento interno do campo de entrada */
+  border: none; /* Remove a borda do campo de entrada */
+  border-bottom: 1px solid #231F20; /* Adiciona uma linha inferior */
+  margin-bottom: 20px; /* Espaçamento inferior entre os campos */
+  font-family: Calibri, sans-serif; /* Fonte do texto do campo de entrada */
+}
+
+/* Estilos para o link "Esqueceu a senha?" */
+.forgot-password {
+  text-align: center; /* Centraliza o texto */
+  font-size: 14px; /* Tamanho da fonte do link */
+  color: #231F20; /* Cor do link */
+  text-decoration: none; /* Remove sublinhado do link */
+  display: block; /* Transforma o link em bloco para alinhar ao centro */
+  margin-top: 20px; /* Espaçamento superior entre os links */
+  transition: color 0.3s; /* Efeito de transição de cor ao passar o mouse */
+}
+
+.forgot-password:hover {
+  color: #14b8a6; /* Cor do link ao passar o mouse */
+}
+
+/* Estilos para o link "Já tem uma conta?" */
+.create-account {
+  text-align: center; /* Centraliza o texto */
+  font-size: 14px; /* Tamanho da fonte do link */
+  color: #231F20; /* Cor do link */
+  text-decoration: none; /* Remove sublinhado do link */
+  display: block; /* Transforma o link em bloco para alinhar ao centro */
+  margin-top: 20px; /* Espaçamento superior entre os links */
+  transition: color 0.3s; /* Efeito de transição de cor ao passar o mouse */
+}
+
+.create-account:hover {
+  color: #0D9488; /* Cor do link ao passar o mouse */
+}
+
+/* Estilos para a imagem de fundo */
+.imagem-fundo {
+  position: fixed;
+  top: 0;
+  left: -17%;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  z-index: -1;
+  clip-path: polygon(0% 0%, 60% 0%, 70% 100%, 0% 100%);
+}
+ 
+#imagem-parrot {
+  position: absolute;
+  left: -180px;
+  top: 10px; /* Ajuste conforme necessário */
+  margin-bottom: 90px;
+  width: 43%;
+  height: auto;
+  opacity: 1;
+}
+
+/* Estilos para a seção do perfil */
+.bloco-cinza {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #231F20; /* Cor cinza */
+  z-index: -1;
+  clip-path: polygon(0% 0%, 20% 0%, 30% 100%, 0% 100%);
+}
+
+/* Estilos para a imagem dog */
+.imagem-dog {
+  position: absolute;
+  left: -70px;
+  top: 70px; /* Adjust this value as needed */
+  width: 43%;
+  height: auto;
+  transform: scaleX(-1);
+  opacity: 1;
+  animation: mostrarImagemDog 2s linear 5s forwards;
+}
+ 
+ 
+@keyframes mostrarImagemDog {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+ 
+.imagem-cat {
+  position: absolute;
+  left: -70px;
+  top: 20px; /* Adjust this value as needed */
+  width: 40%;
+  height: auto;
+  transform: scaleX(-1);
+  opacity: 0;
+  animation: mostrarImagemCat 2s linear 6s forwards;
+ 
+}
+ 
+@keyframes mostrarImagemCat {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.sobre-nos {
+  background-color: #f0f0f0; /* Cor de fundo cinza */
+  padding: 20px;
+  margin-top: 200px; /* Ajuste a margem superior para posicionar mais abaixo */
+  text-align: center; /* Centraliza o conteúdo horizontalmente */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.sobre-nos-content {
+  text-align: left; /* Alinha o conteúdo do guia à esquerda */
+}
+
+.sobre-nos h2 {
+  font-size: 45px;
+  color: #333;
+  margin-bottom: 10px; /* Adiciona um espaçamento inferior entre o título e o parágrafo */
+}
+
+.sobre-nos p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px; /* Adiciona um espaçamento superior entre o título e o parágrafo */
+}
+
+/* Estilos para o contêiner da imagem */
+.sobre-nos-container {
+  background-color: #f0f0f0; /* Cor de fundo cinza */
+  padding: 10px; /* Adiciona algum espaçamento ao redor da imagem */
+}
+
+.guia-icon {
+  max-width: 500px; /* Ajusta a largura máxima para o tamanho do contêiner */
+  height: auto; /* Permite que a altura seja ajustada proporcionalmente à largura */
+  display: block; /* Remove margens indesejadas na parte inferior */
+  margin-left: -50px; /* Centraliza a imagem no contêiner */
+}
+
+.guia-icon2 {
+  max-width: 500px;
+  color: #333;
+
+}
+
+
+/* ... Outros estilos ... */
+
+/* Estilos para dispositivos móveis */
+@media screen and (max-width: 768px) {
+  /* Redefina estilos ou adicione estilos específicos para dispositivos móveis aqui */
+  .login-cadastro {
+    width: 80%; /* Ajuste a largura para caber em telas menores */
+    right: 10%; /* Ajuste a posição horizontal para telas menores */
+  }
+
+  .imagem-dog,
+  .imagem-cat {
+    display: none; /* Oculte as imagens em telas menores */
+  }
+}
+
+/* Estilos para o imagem-cat */
+.imagem-cat {
+  position: absolute;
+  left: -70px; /* Mesma posição horizontal do imagem-dog */
+  width: 40%; /* Mesma largura do imagem-dog */
+  height: auto; /* Mantém a proporção original da imagem */
+  opacity: 0; /* Defina a opacidade inicial para 0% (invisível) */
+  transform: scaleX(-1); /* Vira a imagem horizontalmente */
+  animation: mostrarImagemCat 2s linear 7s forwards; /* Inicia a animação após 7 segundos (2 segundos após o imagem-dog) e dura 2 segundos */
+}
+
+@keyframes mostrarImagemCat {
+  0% {
+    opacity: 0; /* Começa completamente transparente */
+  }
+  100% {
+    opacity: 1; /* Termina totalmente visível */
+  }
+}
+
+@keyframes esconderImagemDog {
+  0% {
+    opacity: 1; /* Começa totalmente visível */
+  }
+  100% {
+    opacity: 0; /* Termina completamente transparente */
+  }
+}
+
+
+/* Estilos para a seção "Sobre Nós" */
+.sobre-nos {
+  position: relative;
+  text-align: center; /* Centraliza o texto horizontalmente */
+  background-color: #fff; /* Cor de fundo do texto, se necessário */
+  padding: 20px; /* Espaçamento interno do texto, se necessário */
+  top: 700px;
+  overflow: hidden; /* Limpa o float para evitar problemas de layout */
+}
+
+.sobre-nos h2 {
+  font-size: 36px; /* Tamanho da fonte do título */
+  color: #333; /* Cor do título */
+  margin-bottom: 20px; /* Espaçamento inferior do título */
+}
+
+.sobre-nos p {
+  font-size: 18px; /* Tamanho da fonte do texto */
+  color: #666; /* Cor do texto */
+  line-height: 1.6; /* Espaçamento entre linhas do texto */
+  margin-bottom: 30px; /* Espaçamento inferior do texto */
+}
+
+.sobre-nos a {
+  color: #14B8A6; /* Cor dos links */
+  text-decoration: none; /* Remove sublinhado dos links */
+  transition: color 0.3s; /* Efeito de transição de cor ao passar o mouse */
+}
+
+.sobre-nos a:hover {
+  color: #0D9488; /* Cor dos links ao passar o mouse */
+}
+
+/* Imagem à direita */
+.sobre-nos img {
+  float: right; /* Flutua a imagem para a direita */
+  margin-left: 20px; /* Espaço à esquerda da imagem */
+}
+
+/* Texto à esquerda */
+.texto-esquerda {
+  float: left; /* Flutua o texto para a esquerda */
+  margin-right: 20px; /* Espaço à direita do texto */
+  text-align: left; /* Alinha o texto à esquerda */
+  width: 50%; /* Define a largura do texto */
+}
+
+/* Estilos para o botão "Saiba mais" */
+.forma-sobre-nos {
+  display: inline-block; /* Torna a imagem um bloco para controlar o posicionamento */
+  margin-top: -20px; /* Espaçamento entre a seção "Sobre Nós" e a imagem */
+  width: 150%; /* Aumente a largura para 150% (ou ajuste conforme necessário) */
+  max-width: 100%; /* Evita que a imagem fique maior do que o contêiner pai */
+  height: 80%; /* Mantém a proporção original da imagem */
+  position: relative; /* Adicione position:relative */
+  z-index: 1; /* Defina um valor alto para z-index para aparecer na frente de tudo */
+  transform: rotate(8deg); /* Gira a imagem em 10 graus (ajuste conforme necessário) */
+  transform-origin: center center; /* Define o ponto de origem da rotação como o centro da imagem */
+  left: 190px;
+}
+
+ /* Estilo para o botão "Criar conta" */
+ .create-account-button {
+  display: inline-block;
+  padding: 10px 20px; /* Ajuste o preenchimento conforme necessário */
+  background-color: #36B49A; /* Cor do tema desejada */
+  color: #fff; /* Cor do texto */
+  text-decoration: none;
+  border-radius: 5px; /* Bordas arredondadas */
+  font-weight: bold;
+  font-size: 16px; /* Tamanho da fonte */
+}
+/* Estilo de hover para o botão (opcional) */
+.create-account-button:hover {
+  background-color: #0d9488; /* Cor de destaque ao passar o mouse */
+}
+
+.span {
+  font-weight: bold;
+  font-family: Calibri, sans-serif;
+}
+
+.privacy-policy{
+  color:  #042f2e;
+  font-family: Calibri, sans-serif;
+  margin-top: 10px;
+}
+
+.privacy-policy:hover {
+  color: #000e0e;
+}
+
+/* Estilos para o título "Cadê Meu Pet?" */
+.find-button {
+  display: block;
+  margin: 25% auto 0;
+  padding: 15px 150px !important;
+  border: none;
+  border-radius: 25px;
+  background-color: #fff;
+  color: #069e80;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  position: relative;
+  font-family: Calibri, sans-serif; /* Adicione a fonte desejada aqui */
+}
+
+/* Estilos para a letra colorida "Pet" dentro do botão */
+.find-button .colored-letter {
+  color: #b0fff6; /* Cor da letra colorida "Pet" */
+}
+
+/* Efeito de pulsação ao passar o mouse */
+.find-button::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 25px;
+  opacity: 0;
+  color: #069e80;
+  z-index: -1;
+}
+
+
+
+a {
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+
+.button-container {
+  text-align: center; /* Centraliza horizontalmente o conteúdo */
+}
+
+.how-to-use-button {
+  display: block;
+  margin: 2% auto 0;
+  padding: 20px 120px !important;
+  border: none;
+  border-radius: 25px;
+  background-color: #0d9488; /* Cor de fundo tema */
+  color: #fff; /* Cor do texto */
+  border: none;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Efeito de transição suave */
+}
+
+.dogo{
+  position: absolute;
+  left: -70px;
+  top: 150px;
+  max-width: 600px;
+
+}
+.goto {
+  position: absolute;
+  right: 25px;
+  top: 600px;
+  max-width: 250px;
+}
+
+/* Estilos para a área do guia */
+.guia {
+  background-color: #f0f0f0; /* Cor de fundo cinza */
+  padding: 20px;
+  margin-top: 90px;
+  text-align: center; /* Centraliza o conteúdo horizontalmente */
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.guia-content {
+  text-align: left; /* Alinha o conteúdo do guia à esquerda */
+}
+
+.guia h2 {
+  font-size: 47px;
+  color: #333;
+  margin-bottom: 10px; /* Adiciona um espaçamento inferior entre o título e o parágrafo */
+}
+
+.guia h3{
+  text-align: center;
+  font-size: 25px;
+  color: #333;
+  margin-bottom: 10px; /* Adiciona um espaçamento inferior entre o título e o parágrafo */
+}
+
+.guia p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px; /* Adiciona um espaçamento superior entre o título e o parágrafo */
+}
+
+
+.guia-icon.flip-horizontal {
+  transform: scaleX(-1);
+}
+.guia-icon2-container {
+  max-width: 100%; /* Largura máxima do elemento */
+  display: block; /* Torna o elemento um elemento de bloco (exibido abaixo de outros elementos) */
+  margin: 30px auto; /* Adiciona margem para centralizar o elemento horizontalmente e adicionar espaçamento */
+  text-align: center; /* Centraliza o conteúdo horizontalmente dentro do elemento */
+}
+
+.guia-icon2 h3 {
+  font-size: 25px;
+  color: #333;
+  margin-bottom: 10px; /* Adiciona um espaçamento inferior entre o título e o parágrafo */
+}
+
+.guia-icon2 p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px; /* Adiciona um espaçamento superior entre o título e o parágrafo */
+}
+
+/*Fin.html*/
+
+.bichano{
+  position: absolute;
+  left: 70px;
+  top: 160px;
+  max-width: 400px;
+  height: auto;
+
+}  
+
+.imagem-fundo {
+  position: fixed;
+  top: 0;
+  left: -17%;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  z-index: -1;
+  clip-path: polygon(0% 0%, 60% 0%, 70% 100%, 0% 100%);
+}
+ 
+ 
+/* Estilos para a área de formulário */
+.form-area {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 100px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-area h2{
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  color: #069e80;
+}
+ 
+/* Estilos para os campos de entrada de texto, email e número, e seleção */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+ 
+/* Restante dos estilos permanece inalterado */
+ 
+ 
+/* Estilos para os botões de opção de rádio */
+.form-group input[type="radio"] {
+  margin-right: 5px;
+  vertical-align: middle; /* Alinha verticalmente os botões de opção */
+  margin-bottom: 15px;
+
+}
+ 
+/* Estilos para os rótulos dos campos de formulário */
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: inline-block; /* Faz com que os rótulos se comportem como elementos em linha */
+  vertical-align: middle; /* Alinha verticalmente os rótulos */
+  margin-left: 30px; /* Move os rótulos 30px para a direita */
+}
+ 
+/* Estilos para o botão "Enviar" */
+.submit-button {
+  background-color: #0d9488;
+  color: #fff;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 20px 60px; /* Aumenta o espaçamento de 10px para 20px em todos os lados */
+  margin-left: 130px;
+  margin-top: 75px;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2); /* Mova 10px para baixo e adicione uma sombra */
+}
+ 
+/* Estilos para o botão "Enviar" ao passar o mouse */
+.submit-button:hover {
+  background-color: #042F2E;
+}
+ 
+.button-styled {
+  position: fixed;
+  background-color: #ffffff;
+  color: #069e80;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  bottom: 540px; /* Ajuste conforme necessário para definir a distância do fundo */
+  right: 20px; /* Ajuste conforme necessário para definir a distância da direita */
+  border: 1px solid #0d9488;
+  border-radius: 60px;
+  text-decoration: none;
+  transition: background-color 0.7s ease;
+}
+
+.button-styled:hover {
+  background-color: #ffffff;
+  color: #042F2E;
+  border: 1px solid #042F2E;
+}
+
+
+.save-styled {
+  background-color: #069e80;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  margin-right: 140px;
+  position: fixed;
+  bottom: 20px; /* Ajuste conforme necessário para definir a distância do fundo */
+  right: 20px; /* Ajuste conforme necessário para definir a distância da direita */
+}
+
+/* Estilos para o botão "Voltar" */
+.save-fake {
+  background-color: #fff;
+  color: #0d9488;
+  margin-top: 20px; /* Mova o botão 20 pixels para baixo */
+  margin-left: auto; /* Centraliza à esquerda */
+  margin-right: auto; /* Centraliza à direita */
+  padding: 8px 40px; /* Aumenta o espaçamento de 10px para 20px em todos os lados */
+  border: 1px solid #0d9488;
+  border-radius: 60px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.7s ease;
+  margin-bottom: 10px; /* Margem inferior de 10px */
+}
+
+
+.save-fake:hover {
+  background-color: #ffffff;
+  color: #042F2E;
+  border: 1px solid #042F2E;
+}
+
+/* Estilos para o botão "Voltar" ao passar o mouse */
+.back-button:hover {
+  background-color: #042F2E;
+}
+
+/* Estilos para o botão "Enviar Imagem" (o mesmo estilo anterior) */
+.custom-file-upload {
+  cursor: pointer;
+  background-color: #042F2E;
+  color: #fff;
+  margin-left: 140px;
+  padding: 13px 20px;
+  border: none;
+  border-radius: 50px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+ 
+/* Estilos para o botão "Enviar Imagem" ao passar o mouse */
+.custom-file-upload:hover {
+  background-color: #042F2E;
+}
+
+    #uploaded-image {
+      max-width: 200px;
+      height: auto;
+      margin-top: 10px;
+      margin-left: 120px;
+
+    }
+
+    a {
+  color: #ffffff; /* Altere para a cor desejada, por exemplo, preto (#000) */
+  text-decoration: none; /* Remove sublinhado padrão */
+}
+
+a:hover {
+  color: #ffffff; /* Altere para a cor desejada ao passar o mouse, se necessário */
+}
+
+
+/* Estilos para os outros botões com cores do tema */
+button {
+  background-color: #069e80; /* Cor do tema para botões */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #042F2E; /* Cor do tema para botões ao passar o mouse */
+}
+
+.find-button.cademeupet-button:hover {
+  background-color: #fff; /* Remove a cor de fundo ao passar o mouse apenas para o botão "Cadê Meu Pet?" */
+  color:#1b6867; 
+}
+
+#header-imagem {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 60px; /* Altura do header + espaço desejado */
+  margin-top: 20px;
+  left: 0; /* Centraliza horizontalmente */
+  right: 0;
+  margin: auto; /* Centraliza horizontalmente */
+  z-index: -3; /* Garante que a imagem fique abaixo dos botões */
+}
+
+
+  
+/* Container de contato */
+.contato-container {
+  max-width: 500px;
+  margin: 90px auto;
+  padding: 20px 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+/* Título do formulário */
+.contato-container h2 {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #069e80;
+}
+
+/* Rótulos e estilos para os campos de entrada de texto e área de texto */
+.contato-container label {
+  display: flex;
+  margin-left: 30px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.contato-container input[type="text"],
+.contato-container input[type="email"],
+.contato-container textarea {
+  width: 85%; /* Ocupa toda a largura disponível */
+  padding: 10px;
+  margin-left: 30px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Garante que padding não aumenta a largura total */
+}
+
+.button-contato {
+  display: block; /* Garante que o botão ocupe toda a largura disponível */
+  background-color: #069e80;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  border-radius: 80px;
+  transition: background-color 0.3s ease;
+  margin: 15px auto 0; /* Ajuste para centralizar horizontalmente e definir a margem superior */
+}
+
+.button-contato:hover {
+  background-color: #042F2E;
+}
+
+
+
+.contato-theo {
+  width: 300px;
+  height: 25S0px;
+  position: absolute;
+  transform: translate(-30%, -70%);
+}
+
+@media (max-width: 768px) {
+  .contato-theo {
+    width: 150px;
+    transform: translate(-30%, -70%);  }
+}
+
+@media (max-width: 480px) {
+  .contato-theo {
+    width: 100px;
+    transform: translate(-30%, -70%);  }
+}
+
+
+.guia-amp-container {
+  position: relative;
+}
+
+.hover-text {
+  position: relative;
+  cursor: pointer;
+  border-bottom: 1px dotted #333; /* Adiciona uma linha pontilhada */
+}
+
+.hover-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px; /* Ajuste conforme necessário */
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.guia-amp-container:hover .hover-content {
+  display: block;
+}
+
+label[for="message"] {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+ /* Adiciona negrito ao texto do label */
+}
+
+textarea#message {
+  width: 426px;
+  height: 144px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical; /* Permite redimensionamento vertical da textarea */
+}
+
+
+.secao-personalizada {
+  bottom: 50px;
+  text-align: center;
+}
+.secao-personalizada h2 {
+  color: #333;
+}
+
+.secao-personalizada p {
+  color: #333;
+}
+
+/* Estilos para o contêiner dos textos */
+.textos-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 170px;
+  padding: 0 30px; /* Distanciamento dos lados */
+}
+
+/* Adição da linha separadora */
+.textos-container::before {
+  content: '';
+  width: 2px; /* Largura da linha */
+  height: 48px; /* Altura da linha */
+  background-color: #666; /* Cor da linha */
+  margin: 0 15px; /* Distância entre a linha e os textos */
+}
+
+/* Estilos para cada bloco de texto */
+.texto {
+  flex: 1;
+  text-align: center;
+}
+
+.texto h3 {
+  color: #333;
+}
+
+.texto p {
+  color: #666;
+}
+
+#profile-section {
+  max-width: 300px;
+  margin: 50px auto;
+  padding: 80px 70px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 70%;
+  margin-left: 50px;
+  margin-right: 10px;
+  border: 3px solid #069e80;
+  margin-top: -60px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+#profile-name-prof,
+#profile-name {
+  font-size: 25px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  color: #231F20;
+  position: relative;
+}
+
+#profile-name-prof::after,
+#profile-name::after {
+  content: '';
+  display: block;
+  width: calc(100% - 20px);
+  height: 2px;
+  background-color: #042F2E;
+  position: absolute;
+  bottom: -2px;
+  left: 20px;
+}
+
+#profile-name-prof::after {
+  top: -55px;
+}
+
+.profile-details {
+  margin-right: 20px;
+}
+
+#change-img-btn {
+  background-color: #069e80;
+  color: #fff;
+  margin-top: 50px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+#change-img-btn:hover {
+  background-color: #042F2E;
+}
+
+#change-name-input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.labels-container {
+  max-width: 400px;
+  margin: 20px auto;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.labels-container label {
+  position: relative;
+  display: flex;
+  padding: 10px;
+  border: 1px solid #8f8f8f;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.labels-container span {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+#profile-name::after {
+  display: none; /* Adicione esta linha para ocultar a linha */
+}
+
+.icon-perfil {
+  /* Adicione estilos para o ícone aqui */
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('img/icon-perfil.png') no-repeat center center; /* Substitua pelo caminho do seu ícone */
+  background-size: cover;
+  margin-left: 10px; /* Ajuste conforme necessário */
+}
+
+.trocar-foto-button {
+  padding: 15px 30px;
+  margin-right: 30px;
+  background-color: #069e80;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.trocar-foto-button:hover {
+  background-color: #042F2E;
+}
+
+.profile-area2 {
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+}
+
+.profile-picture {
+  border-radius: 50%;
+}
+
+.profile-area2 {
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+}
+
+.profile-picture {
+  border-radius: 50%;
+}
+
+.profile-options {
+  position: absolute;
+  top: calc(100% - 80px); /* Posiciona 40px acima da imagem do perfil */
+  left: calc(100% - 120px); /* Posiciona 50px à direita da profile-area2 */
+  background-color: #231F20;
+  border: 1px solid #292929;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.invisible {
+  display: none;
+}
+
+.profile-picture3 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 44px;
+  margin-bottom: 5px;
+  font-style: bold;
+  transition: box-shadow 0.3s ease-in-out; /* Adiciona uma transição suave */
+}
+
+.profile-picture3:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#profile-section h2{
+  color: #333;
+  bottom: 300px;
+}
+
+/* Adicione este bloco de estilo no seu arquivo style.css ou onde você estiver definindo seus estilos */
+
+.sobre-nos-container {
+  background-color: #fff;
+  text-align: center;
+  border-radius: 8px; /* Ajuste conforme necessário */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Adicionei uma sombra suave */
+  max-width: 800px; /* Ajuste conforme necessário */
+  margin: 0 auto;
+  padding: 30px 80px;
+  margin-top: 50px;
+}
+
+.sobre-nos-container h1 {
+  text-size-adjust: 70px;
+  color: #069e80; /* Cor do tema */
+}
+
+.sobre-nos-container p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilos adicionais conforme necessário */
+
+.gatinhor-size {
+  width: 100%;
+  height: auto; /* Para manter a proporção da imagem */
+  border-radius: 10px; /* Adapte conforme necessário para arredondar as bordas */
+}
+
+.homeless-pet{
+  width: 100%;
+  height: auto; /* Para manter a proporção da imagem */
+  border-radius: 10px; /* Adapte conforme necessário para arredondar as bordas */
+
+}
