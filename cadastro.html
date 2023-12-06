@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>CadeMeuPet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="img/favicon.svg" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js"></script>
+  <style>
+    /* Estilos CSS que você forneceu anteriormente */
+  </style>
+</head>
+<body>
+  <div id="buttonDiv"></div>
+  <div class="conteudo-inicio">
+    <img src="img/fundo76.svg" alt="Pet" class="imagem-fundo" id="imagem-fundo">
+    <img src="img/cão.png" alt="Cachorro" class="imagem-dog" id="imagem-dog">
+    <img src="img/gatin.png" alt="Gato" class="imagem-cat" id="imagem-cat">
+  </div>
+  <!-- Título à direita -->
+  <div class="titulo-direita">
+    Cadê Meu Pet?
+  </div>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  <div class="conteudo-pagina">
+    <!-- Área de Login-Cadastro -->
+    <div class="login-conecte-se">
+      <!-- Seção "Conecte-se" (Login e Cadastro) -->
+      <h2>Cadastre-se</h2>
+      <!-- Campo de Usuário -->
+      <input type="text" class="login-input" placeholder="Usuário">
+      <!-- Campo de E-mail -->
+      <input type="text" class="login-input" placeholder="E-mail">
+      <!-- Campo de Senha -->
+      <input type="password" class="login-input" placeholder="Senha">
+      <!-- Campo de Repetir Senha -->
+      <input type="password" class="login-input" placeholder="Repetir Senha">
+      <!-- Botão Enviar -->
+      <button class="login-btn">Cadastrar</button>
+      <!-- Link "Já tem uma conta? Entrar" -->
+      <a href="login.html" class="create-account">Já tem uma conta? Entrar</a>
+    </div>
+    <footer class="footer" id="footer">
+      &copy; 2023 CadêMeuPet. Todos os direitos reservados.
+    </footer>
+    <script src="script.js"></script>
+    </body>
+    </html>
