@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <title>CadeMeuPet</title>
+    <link rel="icon" href="img/favicon.svg" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <link rel="preload" as="image" href="img/fundo76.svg">
+</head>
+<body>
+  <div id="buttonDiv"></div>
+  <div class="conteudo-inicio">
+    <img src="img/fundo76.svg" alt="Pet" class="imagem-fundo" id="imagem-fundo">
+    <img src="img/cão.png" alt="Cachorro" class="imagem-dog" id="imagem-dog">
+    <img src="img/gatin.png" alt="Gato" class="imagem-cat" id="imagem-cat">
+  </div>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+  <!-- Título à direita -->
+  <div class="titulo-direita" id="titulo-direita">
+    Cadê Meu Pet?
+  </div>  
+  <div class="conteudo-pagina">
+   <!-- Área de Login-Cadastro -->
+    <div class="login-cadastro">
+      <!-- Seção "Conecte-se" (Login e Cadastro) -->
+      <h2>Conecte-se</h2>
+      <!-- Botão para Entrar -->
+      <a href="login.html" class="login-entrar-btn">Entrar</a>
+      <span>ou</span>
+      <!-- Botão para Criar Conta -->
+      <a href="cadastro.html" class="login-criar-conta-btn">Criar Conta</a>
+      <!-- Link "Política de Privacidade" -->
+      <a href="termos.html" class="privacy-policy">Política de Privacidade</a>
+    </div>
+      
+    <footer class="footer" id="footer">
+      &copy; 2023 CadêMeuPet. Todos os direitos reservados.
+    </footer>
+    <script src="script.js"></script>
+
+    </body>
+    </html>
